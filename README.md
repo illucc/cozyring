@@ -34,14 +34,14 @@ Once you're part of this webring, it's highly recommended that you add the navba
 To do so, include the following html snippet, replacing `YOUR_NAME` with the username you registered with.
 
 ```html
-<iframe style="width: 100%; border: none;"src="https://cozyring.illuc.xyz/embed/YOUR_NAME"></iframe>
+<iframe style="width: 100%; border: none;" src="https://cozyring.illuc.xyz/embed/YOUR_NAME"></iframe>
 ```
 
 <!-- {{ "--" }}{{ ">" }}
 
 Here's an example of what it looks like (with an added border so you can see the size):
 
-<iframe style="width: 100%; border: none;"src="{{ site.ring[0].url | absolute_url }}"></iframe>
+<iframe style="width: 100%; border: none;" src="{{ site.ring[0].url | absolute_url }}"></iframe>
 
 {{ "<!" }}{{ "--" }} -->
 
