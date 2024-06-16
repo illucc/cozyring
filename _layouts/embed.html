@@ -19,7 +19,7 @@
 	<style>
 html, body {
 	image-rendering: pixelated;
-	background-image: url("base.png");
+	background-image: url("/assets/base.png");
 	background-repeat: no-repeat;
   	background-size: cover;
 	box-sizing: border-box;
@@ -62,13 +62,13 @@ body {
 
 	<table style="width: 100%;">
 		<tr style="height: fit-content;">
-			<td style="width: 30%;"><img src="previous.gif" height="60px"></td>
-			<td style="width: 40%;"><img src="title.png" height="60px"></td>
-			<td style="width: 30%;"><img src="next.gif" height="60px"></td>
+			<td style="width: 30%;"><img src="/assets/previous.gif" height="60px"></td>
+			<td style="width: 40%;"><img src="/assets/title.png" height="60px"></td>
+			<td style="width: 30%;"><img src="/assets/next.gif" height="60px"></td>
 		</tr>
 		<tr style="height: fit-content;">
 			<td style="width: 30%;"><a title="{{ prev.name }}" href="{{ prev.href }}">{{ prev.name }}</a></td>
-			<td style="width: 40%;"><a id="randomlink" href=""><img src="random.gif" height="60px"></a></td>
+			<td style="width: 40%;"><a id="randomlink" href=""><img src="/assets/random.gif" height="60px"></a></td>
 			<td style="width: 30%;"><a title="{{ next.name }}" href="{{ next.href }}">{{ next.name }}</a></td>
 		</tr>
 	</table> 
