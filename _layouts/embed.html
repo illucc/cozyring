@@ -10,10 +10,6 @@
 	-->
 	<meta name="color-scheme" content="light dark">
 	<base target="_parent">
-	<script type="text/javascript">
-		var postsHREF = [{% for page in site.ring %}"{{ page.url }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
-		document.getElementById("randomlink").href = postsHREF[Math.floor(Math.random() * postsHREF.length)]
-	</script>
 </head>
 <body>
 	<style>
@@ -72,7 +68,10 @@ body {
 			<td style="width: 30%;"><a title="{{ next.name }}" href="{{ next.href }}">{{ next.name }}</a></td>
 		</tr>
 	</table> 
-
+	<script type="text/javascript">
+		var postsHREF = [{% for page in site.ring %}"{{ page.url }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+		document.getElementById("randomlink").href = postsHREF[Math.floor(Math.random() * postsHREF.length)]
+	</script>
 
 	{{ content }}
 </body>
