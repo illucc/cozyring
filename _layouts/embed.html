@@ -10,13 +10,28 @@
 	-->
 	<meta name="color-scheme" content="light dark">
 	<base target="_parent">
+	<script type="text/javascript">
+		var postsHREF = [{% for page in site.ring %}"{{ page.url }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+		document.getElementById("randomlink").href = postsHREF[Math.floor(Math.random() * postsHREF.length)]
+	</script>
 </head>
 <body>
 	<style>
 html, body {
+	image-rendering: pixelated;
+	background-image: url("base.png");
+	background-repeat: no-repeat;
+  	background-size: cover;
 	box-sizing: border-box;
 	height: 100%;
+	font-family: 'Courier New', Courier, monospace;
 	margin: 0;
+	text-align: center;
+
+}
+
+a {
+	color: #fceaff;
 }
 
 body {
@@ -28,6 +43,7 @@ body {
 	align-content: center;
 }
 
+#top { text-align: center;}
 #left { text-align: left; }
 #mid { text-align: center; }
 #right { text-align: right; }
@@ -44,21 +60,19 @@ body {
 	{% assign last = site.ring | last %}
 	{% assign prev = page.previous | default: last %}
 
-	<span id="left">
-		<a
-			title="{{ prev.name }}"
-			href="{{ prev.href }}"
-			>&laquo; {{ prev.name }}</a>
-	</span>
-	<span id="mid">
-		&lang; <a href="{{ "/" | relative_url }}">{{ site.title }}</a> &rang;
-	</span>
-	<span id="right">
-		<a
-			title="{{ next.name }}"
-			href="{{ next.href }}"
-			>{{ next.name }} &raquo;</a>
-	</span>
+	<table style="width: 100%;">
+		<tr style="height: fit-content;">
+			<td style="width: 30%;"><img src="previous.gif" height="60px"></td>
+			<td style="width: 40%;"><img src="title.png" height="60px"></td>
+			<td style="width: 30%;"><img src="next.gif" height="60px"></td>
+		</tr>
+		<tr style="height: fit-content;">
+			<td style="width: 30%;"><a title="{{ prev.name }}" href="{{ prev.href }}">{{ prev.name }}</a></td>
+			<td style="width: 40%;"><a id="randomlink" href=""><img src="random.gif" height="60px"></a></td>
+			<td style="width: 30%;"><a title="{{ next.name }}" href="{{ next.href }}">{{ next.name }}</a></td>
+		</tr>
+	</table> 
+
 
 	{{ content }}
 </body>
